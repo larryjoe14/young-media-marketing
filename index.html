@@ -365,103 +365,177 @@
     .spotlight .section-title { color: var(--c-cream); }
     .spotlight .section-sub { color: rgba(255,255,255,0.6); }
 
-    /* Top row: stats + copy side by side */
-    .spotlight-top {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+    /* Geography header with location pins */
+    .geo-header {
+      display: flex;
       align-items: center;
-      margin-bottom: 3.5rem;
-    }
-    .spotlight-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-    .stat-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      backdrop-filter: blur(10px);
-    }
-    .stat-number {
-      font-family: var(--font-display);
-      font-size: 2.4rem;
-      font-weight: 700;
-      color: var(--c-ochre);
-      line-height: 1;
-      margin-bottom: 0.25rem;
-    }
-    .stat-label {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.5);
-      font-weight: 500;
-      letter-spacing: 0.04em;
-    }
-    .spotlight-content h3 {
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      font-weight: 600;
+      justify-content: center;
+      gap: 2rem;
       margin-bottom: 1rem;
+      flex-wrap: wrap;
     }
-    .spotlight-content p {
-      color: rgba(255,255,255,0.65);
-      font-size: 0.95rem;
-      line-height: 1.8;
-      margin-bottom: 1rem;
-    }
-    .spotlight-link {
+    .geo-pin {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      color: var(--c-ochre);
-      text-decoration: none;
+      gap: 6px;
+      font-size: 0.78rem;
       font-weight: 600;
-      font-size: 0.9rem;
-      margin-top: 0.5rem;
-      transition: gap 0.3s;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
     }
-    .spotlight-link:hover { gap: 14px; }
-    .spotlight-link svg { width: 18px; height: 18px; }
+    .geo-pin .pin-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--c-ochre);
+      box-shadow: 0 0 8px rgba(202,138,4,0.4);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    .geo-pin.active { color: var(--c-ochre); }
+    .geo-pin.active .pin-dot { background: var(--c-terra); box-shadow: 0 0 12px rgba(194,65,12,0.5); }
+    @keyframes pulse-dot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.7; }
+    }
 
-    /* TikTok embeds row */
-    .tiktok-row {
+    /* Main spotlight layout: widget left, sidebar right */
+    .spotlight-main {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      align-items: start;
+      grid-template-columns: 3fr 2fr;
+      gap: 2rem;
+      margin-top: 3rem;
     }
-    .tiktok-embed-wrap {
+    .spotlight-widget {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      min-height: 500px;
+    }
+    .spotlight-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* Intro copy block */
+    .spotlight-intro {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: var(--radius-lg);
-      padding: 1.25rem;
-      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-      overflow: hidden;
+      padding: 2rem;
     }
-    .tiktok-embed-wrap:hover {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.15);
-      transform: translateY(-4px);
+    .spotlight-intro h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
     }
-    /* Constrain TikTok embeds */
-    .tiktok-embed-wrap blockquote {
-      max-width: 100% !important;
-      min-width: 0 !important;
-      margin: 0 !important;
-    }
-    .tiktok-embed-wrap iframe {
-      max-width: 100% !important;
-      border-radius: 10px !important;
+    .spotlight-intro p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
     }
 
-    @media (max-width: 900px) {
-      .tiktok-row { grid-template-columns: 1fr 1fr; }
+    /* Location cards */
+    .location-card {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     }
+    .location-card:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.18);
+      transform: translateX(6px);
+    }
+    .location-pin-icon {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: rgba(194,65,12,0.15);
+      border: 1px solid rgba(194,65,12,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+    }
+    .location-card:hover .location-pin-icon {
+      background: var(--c-terra);
+      border-color: var(--c-terra);
+      transform: scale(1.08);
+    }
+    .location-meta {
+      flex: 1;
+    }
+    .location-name {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--c-cream);
+      margin-bottom: 0.15rem;
+    }
+    .location-handle {
+      font-size: 0.82rem;
+      color: var(--c-ochre);
+      font-weight: 500;
+    }
+    .location-detail {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 0.2rem;
+    }
+    .location-arrow {
+      color: rgba(255,255,255,0.25);
+      transition: all 0.3s;
+      flex-shrink: 0;
+    }
+    .location-card:hover .location-arrow {
+      color: var(--c-ochre);
+      transform: translateX(4px);
+    }
+
+    /* Stats row under widget */
+    .spotlight-stats-row {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .stat-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 100px;
+      padding: 0.6rem 1.25rem;
+    }
+    .stat-pill-number {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--c-ochre);
+    }
+    .stat-pill-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.45);
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+
     @media (max-width: 768px) {
-      .spotlight-top { grid-template-columns: 1fr; }
-      .tiktok-row { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
+      .spotlight-main { grid-template-columns: 1fr; }
+      .spotlight-widget { min-height: 400px; }
+      .geo-header { gap: 1rem; }
     }
 
     /* ===================== SERVICES ===================== */
@@ -1331,69 +1405,96 @@
     <div class="spotlight-inner">
       <div class="text-center">
         <div class="section-tag fade-in">Client Spotlight</div>
-        <div class="section-title fade-in" style="margin-bottom:1rem;">Mellow Mushroom ✦ Metro Atlanta</div>
-        <p class="section-sub fade-in" style="color:rgba(255,255,255,0.55);">Three locations. Three Instagram accounts. One creative mind behind them all.</p>
+        <div class="section-title fade-in">Mellow Mushroom</div>
       </div>
 
-      <!-- Top row: stats + copy -->
-      <div class="spotlight-top">
-        <div class="spotlight-stats fade-in">
-          <div class="stat-card">
-            <div class="stat-number">3</div>
-            <div class="stat-label">Locations Managed</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">5.2K</div>
-            <div class="stat-label">Combined Followers</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">4.2K</div>
-            <div class="stat-label">Posts Published</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">7</div>
-            <div class="stat-label">Days a Week</div>
-          </div>
+      <!-- Geographic location pins -->
+      <div class="geo-header fade-in">
+        <span class="geo-pin"><span class="pin-dot"></span> Emory · Atlanta</span>
+        <span class="geo-pin active"><span class="pin-dot"></span> Green Street · Gainesville</span>
+        <span class="geo-pin"><span class="pin-dot"></span> Roswell</span>
+      </div>
+
+      <p class="section-sub fade-in text-center" style="color:rgba(255,255,255,0.5);margin-bottom:2.5rem;">Three locations across Metro Atlanta. Every post, Reel, Story, and event flyer — all from one creative partner.</p>
+
+      <!-- Main layout: Elfsight widget + sidebar -->
+      <div class="spotlight-main">
+
+        <!-- Left: Green Street Elfsight widget -->
+        <div class="spotlight-widget fade-in">
+          <!-- Elfsight Instagram Feed | Mellow Feed -->
+          <div class="elfsight-app-1a9537e5-a035-4a2c-a0cd-e48842d51123" data-elfsight-app-lazy></div>
         </div>
 
-        <div class="spotlight-content fade-in">
-          <h3>From pizza nights to packed houses</h3>
-          <p>I run the Instagram accounts for three Mellow Mushroom locations across Metro Atlanta — Emory, Green Street in Gainesville, and Roswell. Every post, every Reel, every Story, every event flyer comes from me.</p>
-          <p>Consistent, authentic content that builds real community and keeps the tables full. That's what social media management looks like when someone actually knows your brand.</p>
+        <!-- Right: sidebar -->
+        <div class="spotlight-sidebar">
+
+          <!-- Intro copy -->
+          <div class="spotlight-intro fade-in">
+            <h3>From pizza nights to packed houses</h3>
+            <p>I manage Instagram for three Mellow Mushroom locations across Metro Atlanta. Consistent content, real engagement, tables full. That's what social media management looks like when someone actually knows your brand.</p>
+          </div>
+
+          <!-- Emory card -->
+          <a href="https://www.instagram.com/mellowatlanta_emory/" target="_blank" class="location-card fade-in">
+            <div class="location-pin-icon">📍</div>
+            <div class="location-meta">
+              <div class="location-name">Emory · Atlanta</div>
+              <div class="location-handle">@mellowatlanta_emory</div>
+              <div class="location-detail">1,356 followers · 1,460 posts · Atlanta's OG Mellow</div>
+            </div>
+            <div class="location-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+
+          <!-- Green Street card -->
+          <a href="https://www.instagram.com/mellowgreenstreet/" target="_blank" class="location-card fade-in fade-in-delay-1" style="border-color:rgba(194,65,12,0.3);background:rgba(194,65,12,0.06);">
+            <div class="location-pin-icon" style="background:var(--c-terra);border-color:var(--c-terra);">📍</div>
+            <div class="location-meta">
+              <div class="location-name">Green Street · Gainesville</div>
+              <div class="location-handle">@mellowgreenstreet</div>
+              <div class="location-detail">2,470 followers · 1,322 posts · Featured feed ←</div>
+            </div>
+            <div class="location-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+
+          <!-- Roswell card -->
+          <a href="https://www.instagram.com/roswellmellowmushroom/" target="_blank" class="location-card fade-in fade-in-delay-2">
+            <div class="location-pin-icon">📍</div>
+            <div class="location-meta">
+              <div class="location-name">Roswell</div>
+              <div class="location-handle">@roswellmellowmushroom</div>
+              <div class="location-detail">Roswell, GA · Historic Canton St vibes</div>
+            </div>
+            <div class="location-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+
         </div>
       </div>
 
-      <!-- Three location cards -->
-      <div class="tiktok-row">
-        <a href="https://www.instagram.com/mellowatlanta_emory/" target="_blank" class="tiktok-embed-wrap fade-in" style="text-decoration:none;cursor:pointer;">
-          <div style="font-family:var(--font-hand);font-size:1.3rem;color:var(--c-ochre);margin-bottom:0.5rem;">Emory</div>
-          <div style="font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--c-cream);margin-bottom:0.25rem;">@mellowatlanta_emory</div>
-          <div style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:1rem;">1,356 followers · 1,460 posts</div>
-          <div style="font-size:0.84rem;color:rgba(255,255,255,0.55);line-height:1.6;margin-bottom:1rem;">Atlanta's OG Mellow Mushroom. Trivia nights, 70s funk vibes, and pizza since day one.</div>
-          <span class="spotlight-link" style="pointer-events:none;">View on Instagram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </a>
-
-        <a href="https://www.instagram.com/mellowgreenstreet/" target="_blank" class="tiktok-embed-wrap fade-in fade-in-delay-1" style="text-decoration:none;cursor:pointer;">
-          <div style="font-family:var(--font-hand);font-size:1.3rem;color:var(--c-ochre);margin-bottom:0.5rem;">Green Street</div>
-          <div style="font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--c-cream);margin-bottom:0.25rem;">@mellowgreenstreet</div>
-          <div style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:1rem;">2,470 followers · 1,322 posts</div>
-          <div style="font-size:0.84rem;color:rgba(255,255,255,0.55);line-height:1.6;margin-bottom:1rem;">Gainesville's favorite pizza spot. Events, specials, and community content all week long.</div>
-          <span class="spotlight-link" style="pointer-events:none;">View on Instagram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </a>
-
-        <a href="https://www.instagram.com/roswellmellowmushroom/" target="_blank" class="tiktok-embed-wrap fade-in fade-in-delay-2" style="text-decoration:none;cursor:pointer;">
-          <div style="font-family:var(--font-hand);font-size:1.3rem;color:var(--c-ochre);margin-bottom:0.5rem;">Roswell</div>
-          <div style="font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--c-cream);margin-bottom:0.25rem;">@roswellmellowmushroom</div>
-          <div style="font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:1rem;">Roswell, GA</div>
-          <div style="font-size:0.84rem;color:rgba(255,255,255,0.55);line-height:1.6;margin-bottom:1rem;">Stone-baked pizza and good vibes in historic Roswell. Follow along for events and specials.</div>
-          <span class="spotlight-link" style="pointer-events:none;">View on Instagram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-        </a>
-      </div>
-
-      <!-- Elfsight Instagram Feed for Mellow locations -->
-      <!-- ⚠️ REPLACE the widget ID below with your new Elfsight widget scoped to these 3 accounts -->
-      <div style="margin-top:3rem;" class="scale-in">
-        <div class="elfsight-app-REPLACE-WITH-YOUR-WIDGET-ID" data-elfsight-app-lazy></div>
+      <!-- Stats pills -->
+      <div class="spotlight-stats-row fade-in">
+        <div class="stat-pill">
+          <span class="stat-pill-number stat-number">3</span>
+          <span class="stat-pill-label">Locations</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-pill-number stat-number">5.2K</span>
+          <span class="stat-pill-label">Combined Followers</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-pill-number stat-number">4.2K</span>
+          <span class="stat-pill-label">Posts Published</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-pill-number stat-number">7</span>
+          <span class="stat-pill-label">Days / Week</span>
+        </div>
       </div>
 
     </div>
@@ -1463,7 +1564,7 @@
       <div class="pricing-grid">
         <div class="price-card fade-in">
           <div class="price-tier">Bronze</div>
-          <div class="price-amount">$50<span style="font-size:1rem;font-family:var(--font-body);color:var(--c-ink-light);">+</span></div>
+          <div class="price-amount">$150<span style="font-size:1rem;font-family:var(--font-body);color:var(--c-ink-light);">+</span></div>
           <div class="price-period">One-time projects</div>
           <ul class="price-features">
             <li>Brochure &amp; flyer design</li>
@@ -1477,7 +1578,7 @@
 
         <div class="price-card fade-in fade-in-delay-1">
           <div class="price-tier">Silver</div>
-          <div class="price-amount">$300</div>
+          <div class="price-amount">$400</div>
           <div class="price-period">Per month</div>
           <ul class="price-features">
             <li>3 posts per week with copy &amp; hashtags</li>
@@ -1493,7 +1594,7 @@
         <div class="price-card featured fade-in fade-in-delay-2">
           <div class="price-badge">Most Popular</div>
           <div class="price-tier">Gold</div>
-          <div class="price-amount">$400</div>
+          <div class="price-amount">$500</div>
           <div class="price-period">Per month</div>
           <ul class="price-features">
             <li>3 posts per week on Facebook &amp; Instagram</li>
@@ -1508,7 +1609,7 @@
 
         <div class="price-card fade-in fade-in-delay-3">
           <div class="price-tier">Diamond</div>
-          <div class="price-amount">$500</div>
+          <div class="price-amount">$600</div>
           <div class="price-period">One-time setup</div>
           <ul class="price-features">
             <li>Page setup on Facebook, Instagram &amp; TikTok</li>
