@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Young Media Marketing — Social Media Management for Atlanta's Best Local Businesses</title>
+  <meta name="description" content="Full-service social media management, content creation, and digital marketing for local businesses across Metro Atlanta. Instagram, Facebook, TikTok, YouTube, Google Business Profile, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --c-bg: #FAF9F6;
+      --c-bg-warm: #F5F0EB;
+      --c-bg-card: #FFFFFF;
+      --c-text: #1a1a1a;
+      --c-text-mid: #5a5650;
+      --c-text-light: #8a857e;
+      --c-accent: #B8654A;
+      --c-accent-hover: #9E5640;
+      --c-accent-light: #F0DDD6;
+      --c-gold: #C9A96E;
+      --c-gold-light: #F5EDE0;
+      --c-border: rgba(0,0,0,0.08);
+      --c-border-strong: rgba(0,0,0,0.15);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'DM Sans', -apple-system, sans-serif;
+      --radius: 10px;
+      --radius-lg: 16px;
+      --max-w: 1140px;
+      --section-pad: 100px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--c-bg);
+      color: var(--c-text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===================== NAV ===================== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(250,249,246,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--c-border);
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: 0 1px 20px rgba(0,0,0,0.06); }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 500;
+      font-style: italic;
+      letter-spacing: 0.02em;
+      color: var(--c-text);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--c-text-mid);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--c-accent); }
+    .nav-cta {
+      background: var(--c-accent) !important;
+      color: #fff !important;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-size: 0.8rem !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--c-accent-hover) !important; }
+    .nav-hamburger {
+      display: none;
+      background: none; border: none; cursor: pointer;
+      width: 28px; height: 20px; position: relative; flex-direction: column; justify-content: space-between;
+    }
+    .nav-hamburger span {
+      display: block; width: 100%; height: 2px; background: var(--c-text);
+      border-radius: 2px; transition: all 0.3s;
+    }
+    .mobile-menu {
+      display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0;
+      background: var(--c-bg); z-index: 99; padding: 2rem;
+      flex-direction: column; gap: 1.5rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 1.2rem; font-weight: 500; color: var(--c-text);
+      text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid var(--c-border);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+    }
+
+    /* ===================== HERO ===================== */
+    .hero {
+      padding: 160px 2rem 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 20% 80%, rgba(184,101,74,0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 20%, rgba(201,169,110,0.06) 0%, transparent 70%),
+        linear-gradient(180deg, var(--c-bg) 0%, var(--c-bg-warm) 100%);
+      z-index: 0;
+    }
+    .hero > * { position: relative; z-index: 1; }
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.15;
+      max-width: 680px;
+      margin: 0 auto 1.25rem;
+      letter-spacing: -0.01em;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--c-accent);
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--c-text-mid);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s;
+      border: none;
+    }
+    .btn-primary { background: var(--c-accent); color: #fff; }
+    .btn-primary:hover { background: var(--c-accent-hover); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--c-text);
+      border: 1px solid var(--c-border-strong);
+    }
+    .btn-outline:hover { background: var(--c-bg-card); border-color: var(--c-accent); color: var(--c-accent); }
+
+    /* ===================== TRUST BAR ===================== */
+    .trust-bar {
+      padding: 2.5rem 2rem;
+      border-top: 1px solid var(--c-border);
+      border-bottom: 1px solid var(--c-border);
+    }
+    .trust-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .trust-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--c-text-light);
+      white-space: nowrap;
+    }
+    .trust-divider { width: 1px; height: 20px; background: var(--c-border-strong); }
+    .trust-clients { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+    .trust-client {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--c-text-mid);
+      white-space: nowrap;
+    }
+
+    /* ===================== SECTIONS ===================== */
+    .section {
+      padding: var(--section-pad) 2rem;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .section-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+      text-align: center;
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--c-text-mid);
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
+    }
+
+    /* ===================== LIVE FEED WALL ===================== */
+    .feed-section {
+      padding: var(--section-pad) 2rem;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .feed-wall-placeholder {
+      background: var(--c-bg-warm);
+      border: 2px dashed var(--c-border-strong);
+      border-radius: var(--radius-lg);
+      padding: 4rem 2rem;
+      text-align: center;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .feed-wall-placeholder .placeholder-icon {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--c-accent-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+    }
+    .feed-wall-placeholder h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+    .feed-wall-placeholder p {
+      color: var(--c-text-mid);
+      font-size: 0.9rem;
+      max-width: 480px;
+    }
+    .feed-wall-placeholder code {
+      display: block;
+      background: rgba(0,0,0,0.04);
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      color: var(--c-text-mid);
+      margin-top: 0.5rem;
+    }
+
+    /* ===================== PLATFORMS GRID ===================== */
+    .platforms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+    .platform-card {
+      background: var(--c-bg-card);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: all 0.3s;
+    }
+    .platform-card:hover {
+      border-color: var(--c-accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+    }
+    .platform-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    .pi-instagram { background: linear-gradient(135deg, #F77737, #E1306C, #833AB4); color: #fff; }
+    .pi-facebook { background: #1877F2; color: #fff; }
+    .pi-tiktok { background: #010101; color: #fff; }
+    .pi-youtube { background: #FF0000; color: #fff; }
+    .pi-google { background: #4285F4; color: #fff; }
+    .pi-yelp { background: #D32323; color: #fff; }
+    .pi-design { background: var(--c-gold); color: #fff; }
+    .pi-events { background: var(--c-accent); color: #fff; }
+    .platform-card h3 {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .platform-card p {
+      font-size: 0.85rem;
+      color: var(--c-text-mid);
+      line-height: 1.55;
+    }
+
+    /* ===================== PRICING ===================== */
+    .pricing-section { background: var(--c-bg-warm); }
+    .pricing-section .section-inner {
+      padding: var(--section-pad) 2rem;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .price-card {
+      background: var(--c-bg-card);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 1.75rem;
+      position: relative;
+      transition: all 0.3s;
+    }
+    .price-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+    }
+    .price-card.featured {
+      border: 2px solid var(--c-accent);
+    }
+    .price-badge {
+      position: absolute;
+      top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--c-accent);
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 16px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .price-tier {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--c-text-light);
+      margin-bottom: 0.75rem;
+    }
+    .price-amount {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 500;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .price-period {
+      font-size: 0.82rem;
+      color: var(--c-text-light);
+      margin-bottom: 1.5rem;
+    }
+    .price-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .price-features li {
+      font-size: 0.85rem;
+      color: var(--c-text-mid);
+      padding-left: 1.4rem;
+      position: relative;
+      line-height: 1.5;
+    }
+    .price-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--c-accent);
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+    .pricing-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--c-text-mid);
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      background: rgba(184,101,74,0.06);
+      border-radius: var(--radius);
+      line-height: 1.6;
+    }
+    .pricing-note strong { color: var(--c-text); }
+
+    /* ===================== ABOUT ===================== */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .about-photo {
+      aspect-ratio: 4/5;
+      background: var(--c-bg-warm);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--c-border);
+    }
+    .about-photo-placeholder {
+      text-align: center;
+      color: var(--c-text-light);
+      font-size: 0.85rem;
+    }
+    .about-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 400;
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+    }
+    .about-content h2 em { font-style: italic; color: var(--c-accent); }
+    .about-content p {
+      font-size: 0.95rem;
+      color: var(--c-text-mid);
+      margin-bottom: 1rem;
+      line-height: 1.75;
+    }
+    @media (max-width: 768px) {
+      .about-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .about-photo { max-height: 300px; }
+    }
+
+    /* ===================== CTA SECTION ===================== */
+    .cta-section {
+      padding: var(--section-pad) 2rem;
+      text-align: center;
+    }
+    .cta-box {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--c-text);
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 4rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-box::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(184,101,74,0.25) 0%, transparent 60%);
+    }
+    .cta-box > * { position: relative; z-index: 1; }
+    .cta-box h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+    }
+    .cta-box p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 2rem;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-white {
+      background: #fff;
+      color: var(--c-text);
+      padding: 14px 36px;
+    }
+    .btn-white:hover { background: #f0ece6; transform: translateY(-1px); }
+
+    /* ===================== FOOTER ===================== */
+    .footer {
+      border-top: 1px solid var(--c-border);
+      padding: 3rem 2rem;
+    }
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 500;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+    .footer-contact {
+      font-size: 0.82rem;
+      color: var(--c-text-mid);
+      line-height: 1.8;
+    }
+    .footer-contact a { color: var(--c-accent); text-decoration: none; }
+    .footer-contact a:hover { text-decoration: underline; }
+    .footer-nav { display: flex; gap: 3rem; }
+    .footer-col h4 {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--c-text-light);
+      margin-bottom: 0.75rem;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--c-text-mid);
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--c-accent); }
+    .footer-bottom {
+      max-width: var(--max-w);
+      margin: 2rem auto 0;
+      padding: 1.5rem 2rem 0;
+      border-top: 1px solid var(--c-border);
+      font-size: 0.75rem;
+      color: var(--c-text-light);
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .footer-inner { flex-direction: column; }
+      .footer-nav { flex-direction: column; gap: 1.5rem; }
+    }
+
+    /* ===================== ANIMATIONS ===================== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===================== CONTACT SECTION ===================== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    .contact-info h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+    .contact-info p {
+      font-size: 0.92rem;
+      color: var(--c-text-mid);
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+    .contact-info a { color: var(--c-accent); text-decoration: none; }
+    .contact-info a:hover { text-decoration: underline; }
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--c-border);
+      font-size: 0.9rem;
+    }
+    .contact-detail-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: var(--c-accent-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .contact-form {
+      background: var(--c-bg-card);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+    }
+    .contact-form h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--c-text-mid);
+      margin-bottom: 0.4rem;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--c-border-strong);
+      border-radius: 6px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--c-text);
+      background: var(--c-bg);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { border-color: var(--c-accent); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 768px) {
+      :root { --section-pad: 60px; }
+      .hero { padding: 130px 1.5rem 60px; }
+      .pricing-grid { grid-template-columns: 1fr 1fr; }
+      .cta-box { padding: 2.5rem 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+      .trust-divider { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">young media</a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav-cta">Contact Me</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#work" onclick="closeMobile()">Work</a>
+    <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#pricing" onclick="closeMobile()">Pricing</a>
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+  </div>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="hero-eyebrow">Metro Atlanta's Creative Partner</div>
+    <h1>Your business. Every platform. <em>One creative mind.</em></h1>
+    <p class="hero-sub">Social media management, content creation, and digital marketing for Atlanta's best local businesses.</p>
+    <div class="hero-ctas">
+      <a href="#work" class="btn btn-primary">See My Work</a>
+      <a href="#contact" class="btn btn-outline">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- ==================== TRUST BAR ==================== -->
+  <div class="trust-bar">
+    <div class="trust-inner">
+      <span class="trust-label">Trusted by</span>
+      <span class="trust-divider"></span>
+      <div class="trust-clients">
+        <span class="trust-client">Mellow Mushroom</span>
+        <span class="trust-client">Level 7 ATL</span>
+        <span class="trust-client">Cavell's Boutique</span>
+        <span class="trust-client">Alkaloid Networks</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== LIVE FEED WALL ==================== -->
+  <section class="feed-section" id="work">
+    <div class="section-eyebrow fade-in">Live from my clients</div>
+    <div class="section-title fade-in">The work speaks for itself</div>
+    <p class="section-sub fade-in">Real posts. Real businesses. Real results. This feed updates live from the Instagram accounts I manage across Metro Atlanta.</p>
+
+    <!-- Elfsight Instagram Feed -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-a7bec5fd-41f1-4fcd-87a2-e251995577f8" data-elfsight-app-lazy></div>
+  </section>
+
+  <!-- ==================== SERVICES / PLATFORMS ==================== -->
+  <section class="section" id="services">
+    <div class="section-eyebrow fade-in">More than just Instagram</div>
+    <div class="section-title fade-in">Every platform. Every touchpoint.</div>
+    <p class="section-sub fade-in">I manage your entire digital presence — not just one feed. From social media to Google reviews to event promotion, I make sure your business shows up everywhere your customers are looking.</p>
+
+    <div class="platforms-grid">
+      <div class="platform-card fade-in">
+        <div class="platform-icon pi-instagram">Ig</div>
+        <h3>Instagram</h3>
+        <p>Feed posts, Reels, Stories, and hashtag strategy. Consistent content that grows your following and drives real engagement.</p>
+      </div>
+      <div class="platform-card fade-in">
+        <div class="platform-icon pi-facebook">Fb</div>
+        <h3>Facebook</h3>
+        <p>Page management, event creation, community engagement, and targeted content for your local audience.</p>
+      </div>
+      <div class="platform-card fade-in">
+        <div class="platform-icon pi-tiktok">Tk</div>
+        <h3>TikTok</h3>
+        <p>Short-form video content that captures attention and puts your business in front of a new generation of customers.</p>
+      </div>
+      <div class="platform-card fade-in">
+        <div class="platform-icon pi-youtube">Yt</div>
+        <h3>YouTube</h3>
+        <p>Long-form video content, channel management, and video SEO to build authority and trust.</p>
+      </div>
+      <div class="platform-card fade-in">
+        <div class="platform-icon pi-google">G</div>
+        <h3>Google Business Profile</h3>
+        <p>Listing optimization, Google Posts, Q&A management, and review responses that build your local search presence.</p>
+      </div>
+      <div class="platform-card fade-in">
+        <div class="platform-icon pi-yelp">Y!</div>
+        <h3>Yelp & Reviews</h3>
+        <p>Review monitoring, professional responses, and reputation management across all major review platforms.</p>
+      </div>
+      <div class="platform-card fade-in">
+        <div class="platform-icon pi-design">D</div>
+        <h3>Graphic Design</h3>
+        <p>Logos, branding, flyers, posters, business cards, product packaging — everything your business needs to look polished.</p>
+      </div>
+      <div class="platform-card fade-in">
+        <div class="platform-icon pi-events">E</div>
+        <h3>Event Planning & Promotion</h3>
+        <p>From concept to promotion to coverage — I help plan, market, and document your events across every channel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRICING ==================== -->
+  <section class="pricing-section" id="pricing">
+    <div class="section-inner">
+      <div class="section-eyebrow fade-in">Simple pricing</div>
+      <div class="section-title fade-in">Plans that grow with your business</div>
+      <p class="section-sub fade-in">No hidden fees. No long-term contracts. Just clear, honest pricing for real results. Every plan includes SEO, personalized branding, and my full creative attention.</p>
+
+      <div class="pricing-grid">
+        <div class="price-card fade-in">
+          <div class="price-tier">Bronze</div>
+          <div class="price-amount">$50<span style="font-size:1rem;font-family:var(--font-body);color:var(--c-text-light);">+</span></div>
+          <div class="price-period">One-time projects</div>
+          <ul class="price-features">
+            <li>Brochure &amp; flyer design</li>
+            <li>Business card design</li>
+            <li>Social media post templates</li>
+            <li>Logo design</li>
+            <li>Posters &amp; photo editing</li>
+            <li>Product packaging</li>
+          </ul>
+        </div>
+
+        <div class="price-card fade-in">
+          <div class="price-tier">Silver</div>
+          <div class="price-amount">$300</div>
+          <div class="price-period">Per month</div>
+          <ul class="price-features">
+            <li>3 posts per week with copy &amp; hashtags</li>
+            <li>1 Reel per week</li>
+            <li>1 platform managed</li>
+            <li>Minimum interaction (likes, hearts)</li>
+            <li>Holiday posts included</li>
+            <li>1 event per month</li>
+            <li>1 Story + 1 flyer included</li>
+          </ul>
+        </div>
+
+        <div class="price-card featured fade-in">
+          <div class="price-badge">Most Popular</div>
+          <div class="price-tier">Gold</div>
+          <div class="price-amount">$400</div>
+          <div class="price-period">Per month</div>
+          <ul class="price-features">
+            <li>3 posts per week on Facebook &amp; Instagram</li>
+            <li>1 Reel per week</li>
+            <li>2 platforms managed</li>
+            <li>Holiday posts included</li>
+            <li>2 events per month</li>
+            <li>Interactive commenting &amp; message responses</li>
+            <li>1 Post + 1 Story + 1 flyer included</li>
+          </ul>
+        </div>
+
+        <div class="price-card fade-in">
+          <div class="price-tier">Diamond</div>
+          <div class="price-amount">$500</div>
+          <div class="price-period">One-time setup</div>
+          <ul class="price-features">
+            <li>Page setup on Facebook, Instagram &amp; TikTok</li>
+            <li>Claim &amp; optimize your profiles</li>
+            <li>Custom brand &amp; style creation</li>
+            <li>Individual training &amp; education</li>
+            <li>Includes 1 month of hands-on training</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pricing-note fade-in">
+        <strong>Need additional platforms?</strong> Add Google, Yelp, TikTok, Snapchat, or any other platform to any plan for <strong>$100/month per site</strong>. All plans include search engine optimization, individual goals, personalized styling, and my experienced design abilities.
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section class="section" id="about">
+    <div class="about-layout">
+      <div class="about-photo fade-in">
+        <img src="jackie.jpg" alt="Jacquelynne — Young Media Marketing" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg);">
+      </div>
+      <div class="about-content fade-in">
+        <div class="section-eyebrow" style="text-align:left;">Meet Jacquelynne</div>
+        <h2>Not an agency. <em>Your creative partner.</em></h2>
+        <p>I'm Jacquelynne — the one-woman creative force behind Young Media Marketing. I started this business because I saw too many incredible Atlanta businesses with amazing products, food, and services getting overlooked online.</p>
+        <p>The big agencies charge big prices and treat you like a number. I do things differently. I come to you or your store. I photograph your food. I design your flyers. I respond to your customers. I learn your brand inside and out — because your social media should feel like <em>you</em>, not like it was made by a committee.</p>
+        <p>Whether you're a restaurant on the Green Street strip, a boutique in Lawrenceville, or a hair salon or coworking space in the heart of Atlanta — I make your business look as good online as it already is in person.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA ==================== -->
+  <section class="cta-section">
+    <div class="cta-box fade-in">
+      <h2>Ready to grow your business online?</h2>
+      <p>Fill out the form below and I'll get back to you personally — usually within a few hours. No pressure, no pitch — just a conversation about what your business needs.</p>
+      <a href="#contact" class="btn btn-white">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="section" id="contact">
+    <div class="section-eyebrow fade-in">Get in touch</div>
+    <div class="section-title fade-in">Let's talk about your business</div>
+    <p class="section-sub fade-in">Whether you're ready to start or just have questions, I'd love to hear from you.</p>
+
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <h3>Reach me directly</h3>
+        <p>I respond to every message personally — usually within a few hours.</p>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">&#9742;</div>
+          <div>
+            <div style="font-weight:500;">Phone</div>
+            <a href="tel:7703709824">770.370.9824</a>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">&#9993;</div>
+          <div>
+            <div style="font-weight:500;">Email</div>
+            <a href="mailto:young.jacquelynne@gmail.com">young.jacquelynne@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">&#9737;</div>
+          <div>
+            <div style="font-weight:500;">Instagram</div>
+            <a href="https://www.instagram.com/pattydurandgae" target="_blank">@pattydurandgae</a>
+          </div>
+        </div>
+
+        <div class="contact-detail" style="border-bottom:none;">
+          <div class="contact-detail-icon">&#9873;</div>
+          <div>
+            <div style="font-weight:500;">Location</div>
+            <span style="color:var(--c-text-mid);">Metro Atlanta, Georgia</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form fade-in">
+        <h3>Send me a message</h3>
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+          <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" placeholder="jane@business.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(770) 555-1234">
+            </div>
+            <div class="form-group">
+              <label for="contact-pref">Preferred way to reach you</label>
+              <select id="contact-pref" name="contact-preference">
+                <option value="email">Email</option>
+                <option value="phone">Phone call</option>
+                <option value="text">Text message</option>
+                <option value="any">Any works for me</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="business">Your business name</label>
+            <input type="text" id="business" name="business" placeholder="Jane's Cafe">
+          </div>
+          <div class="form-group">
+            <label for="interest">What are you interested in?</label>
+            <select id="interest" name="interest">
+              <option value="">Select one...</option>
+              <option value="social-management">Social media management</option>
+              <option value="design">Graphic design (logos, flyers, etc.)</option>
+              <option value="gbp">Google Business Profile &amp; reviews</option>
+              <option value="training">Training (learn to do it yourself)</option>
+              <option value="full-setup">Full account setup (Diamond)</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell me about your business</label>
+            <textarea id="message" name="message" placeholder="What does your business do? What are your goals for social media?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">young media</div>
+        <div class="footer-contact">
+          <a href="tel:7703709824">770.370.9824</a><br>
+          <a href="mailto:young.jacquelynne@gmail.com">young.jacquelynne@gmail.com</a><br>
+          Metro Atlanta, Georgia
+        </div>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="#work">Work</a>
+          <a href="#services">Services</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#services">Social Media Management</a>
+          <a href="#services">Content Creation</a>
+          <a href="#services">Google Business Profile</a>
+          <a href="#services">Graphic Design</a>
+          <a href="#services">Event Planning</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="https://www.instagram.com/pattydurandgae" target="_blank">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">TikTok</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Young Media Marketing. All rights reserved. | Media &bull; Marketing &bull; Digital Design &bull; Event Planning
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+    function closeMobile() {
+      mobileMenu.classList.remove('open');
+    }
+
+    // Scroll fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
